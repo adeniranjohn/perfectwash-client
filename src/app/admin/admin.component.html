@@ -4,6 +4,7 @@
 <mat-card class="mattop50 center">
   <img mat-card-image [src]="imageurl">
   <h2>sign in your credentials</h2>
+  <mat-error>{{error}}</mat-error>
 <form #f="ngForm" (ngSubmit)="getAdmin(f.value)">
   <mat-form-field appearance="outline">
   <mat-label for="phoneNumber">Phone number</mat-label>

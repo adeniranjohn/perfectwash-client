@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import {Location } from '@angular/common';
 import { ApiService } from '../api.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -33,20 +33,24 @@ export class EditshopComponent implements OnInit {
         return total + parseFloat(wash.amountPaid);
       },0);
 
+
     });
 
 
 
   }
 
+  editShop(){
+    this.router.navigate(['admin/shops', this.theshop._id, 'edit']);
+  }
   back() {
     this.location.back();
   }
 
-  delete(id){
-    this.api.deleteShop(id)
+  delete(){
+    this.api.deleteShop(this.theshop._id)
     .subscribe(res => res);
-    this.router.navigateByUrl('/admin/seeshops');
+    this.location.back();
   }
 
 }

@@ -1,5 +1,6 @@
 <app-admin-nav></app-admin-nav>
 <mat-card>
+  <img mat-card-image [src]="imageurl">
 <h2>shop details</h2>
 <app-shop [shop]="theshop"></app-shop>
 <mat-list>
@@ -8,5 +9,6 @@
 </mat-list>
 
 <button mat-raised-button color="basic" (click)="back()">Back</button>
-<button (click)="delete(theshop._id)" mat-raised-button color="warn">Delete</button>
+<button (click)="delete()" mat-raised-button color="warn">Delete</button>
+<button (click)="editShop()" mat-raised-button color="accent">Edit Shop</button>
 </mat-card>

@@ -115,7 +115,7 @@ export function getToken(){
         canActivate: [AuthGuard]
       },
       {
-        path: 'admin/changepassword/:phonenumber',
+        path: 'admin/shops/:id/edit',
         component: ChangePasswordComponent,
         canActivate: [AuthGuard]
       },

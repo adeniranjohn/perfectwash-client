@@ -15,19 +15,6 @@ export class ShopComponent implements OnInit {
 
   }
 
-  shopSales(){
-
-  }
-
-  dailyWash(){
-
-  }
-  totalWash(){
-
-
-  }
-
-
 
 
 }

@@ -19,12 +19,8 @@ export class AuthenticateService {
 
 
   signin(user) {
-    return this.http.post(this.apiurl + '/admin/signin', user)
-    .subscribe((data: any) => {
-      console.log(data);
-      this.setToken(data.token);
-      this.router.navigateByUrl('admin/adminboard');
-    });
+    return this.http.post(this.apiurl + '/admin/signin', user);
+
   }
 
   createShop(shop) {

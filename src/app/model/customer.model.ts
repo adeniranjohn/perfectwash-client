@@ -17,6 +17,7 @@ export class Customer {
       numberItems?: number,
       amountPaid?: number,
       status?: string,
+      shopName?: string,
       eventDate?: Date,
       shopPhone?: string,
       createdAt?: Date ){
@@ -27,5 +28,5 @@ export class Customer {
       return this._id;
     }
 
-   
+
 }
