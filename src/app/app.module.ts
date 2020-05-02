@@ -9,7 +9,6 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { AdminComponent } from './admin/admin.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminboardComponent } from './adminboard/adminboard.component';
 import { CreateshopComponent } from './createshop/createshop.component';
 import { CustomerComponent } from './customer/customer.component';
@@ -40,7 +39,6 @@ export function getToken(){
     NavComponent,
     FooterComponent,
     AdminComponent,
-    DashboardComponent,
     AdminboardComponent,
     CreateshopComponent,
     CustomerComponent,
@@ -83,11 +81,6 @@ export function getToken(){
       {
         path: 'admin',
         component: AdminComponent
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent,
-        canActivate: [AuthGuard]
       },
       {
         path: 'admin/createshop',

@@ -21,7 +21,6 @@ export class AdminComponent implements OnInit {
   getAdmin(user){
     this.auth.signin(user).subscribe(
     (data: any) => {
-      console.log(data);
       this.auth.setToken(data.token);
       this.router.navigateByUrl('admin/adminboard');
     },

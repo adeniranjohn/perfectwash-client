@@ -22,7 +22,6 @@ export class EditCustomerComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log(this.thecustomer);
     this.route.params.subscribe(params => {this.id = params.id; });
     this.api.getTheCustomer(this.id)
     .subscribe((response: any) => {
@@ -34,7 +33,6 @@ export class EditCustomerComponent implements OnInit {
   saveCustomerStatus(customer){
 
     customer._id = this.id;
-    console.log(customer);
     this.api.saveCustomer(customer).subscribe(res => res);
     this.router.navigateByUrl('/admin/adminboard');
 

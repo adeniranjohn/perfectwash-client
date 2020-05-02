@@ -1,4 +1,5 @@
-body, app-root {
+body,
+app-root {
   max-width: 960px;
   margin: 0 auto;
 
@@ -6,21 +7,20 @@ body, app-root {
 
 
 app-root {
-  margin:0 ;
+  margin: 0;
   padding: 0;
 
 }
 
 mat-card {
-    margin: 10px;
-    max-width: 100%;
-    padding: 5px;
+  margin: 10px;
+  max-width: 100%;
+  padding: 5px;
 }
 
 strong {
   text-align: left;
 }
-
 
 
 mat-nav-list {
@@ -52,7 +52,7 @@ span {
 
 span.status {
 
-  background-color:#ffd740;
+  background-color: #ffd740;
   color: #673ab7;
   border: none;
   outline: none;
@@ -74,7 +74,7 @@ app-admin-nav {
 }
 
 form {
-  text-align:center;
+  text-align: center;
   padding: 5px;
 }
 
@@ -85,16 +85,19 @@ form {
 .left {
   text-align: left;
 }
+
 .center {
   text-align: center;
 }
 
-h2, h3 {
+h2,
+h3 {
   text-align: center;
   color: #673ab7;
   padding: 1px;
   margin: 1px;
 }
+
 .primary {
   background-color: #673ab7;
   color: white;

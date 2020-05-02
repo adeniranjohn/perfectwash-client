@@ -25,7 +25,6 @@ export class CustomerComponent implements OnInit {
   deleteCustomer(){
     this.api.deleteCustomer(this.customer._id)
     .subscribe(response => {
-        console.log(response);
     });
   }
 

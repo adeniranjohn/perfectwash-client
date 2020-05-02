@@ -13,6 +13,7 @@ export class ChangePasswordComponent implements OnInit {
   imageurl = '../../assets/bannermed.jpg';
   theroles = ['Supervisor', 'Administrator'];
   id;
+  error='';
   editshop: Shop;
   constructor(
     private api: ApiService,
@@ -28,7 +29,6 @@ export class ChangePasswordComponent implements OnInit {
     .subscribe((response: any) => {
       this.editshop = response.shop[0];
     });
-    console.log(this.editshop);
 
   }
 
@@ -37,10 +37,13 @@ export class ChangePasswordComponent implements OnInit {
   console.log(phoneNumber, password, confirmPassword);
   if (password === confirmPassword){
       this.api.changePassword(value)
-      .subscribe(res => console.log(res));
+      .subscribe((res: any) => {
+      },(err: any) => {
+        this.error = err.error;
+      });
 
     }else{
-      console.log('Password not compatible');
+    this.error = 'Password not compatible';
     }
   this.router.navigateByUrl('admin/adminBoard');
 }

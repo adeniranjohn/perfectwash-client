@@ -54,7 +54,6 @@ export class ApiService {
     }
 
     changePassword(value){
-      console.log(value);
       return this.http.put(this.apiurl + '/admin/changePassword', value);
     }
 

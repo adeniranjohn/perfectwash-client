@@ -32,7 +32,6 @@ export class CustomersComponent implements OnInit {
 
   customerSelected(customer: Customer){
     this.aCustomer = customer;
-    console.log(this.aCustomer);
     this.router.navigate([`/admin/washes/${this.aCustomer._id}`]);
   }
 
@@ -50,7 +49,6 @@ export class CustomersComponent implements OnInit {
   getCustomers(): boolean{
     this.api.getCustomers()
     .subscribe((response: any) => {
-     // console.log(response.data);
       this.customers = response.data;
     });
     return false;

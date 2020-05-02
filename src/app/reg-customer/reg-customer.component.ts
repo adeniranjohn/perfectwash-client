@@ -22,7 +22,6 @@ export class RegCustomerComponent implements OnInit {
     console.log(this.auth.getPayLoad());
     const { phoneNumber } = this.auth.getPayLoad();
     user.shopPhone = phoneNumber;
-    console.log(user);
     this.api.postCustomer(user)
     .subscribe(data => {
     if(data){

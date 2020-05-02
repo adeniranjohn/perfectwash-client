@@ -20,7 +20,6 @@ export class ShopsComponent implements OnInit {
 
   selectShop(shop: Shop){
     this.theShop = shop;
-    console.log(this.theShop);
     this.router.navigate([`/admin/shops/${this.theShop._id}`]);
   }
 
@@ -29,7 +28,6 @@ export class ShopsComponent implements OnInit {
     this.api.getShops()
     .subscribe((res: any) => {
       this.shops = res.shops;
-      console.log(this.shops);
     } );
   }
 }
