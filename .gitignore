@@ -3,5 +3,7 @@ node_modules
 .env
 dist
 /.firebase
+.firebaserc
 src/.firebaserc
-src/.firebase.json
+firebase.json
+src/firebase.json
