@@ -1,8 +1,7 @@
-client-angular/node_modules
 node_modules
 .env
 dist
-/.firebase
+.firebase
 .firebaserc
 src/.firebaserc
 firebase.json
