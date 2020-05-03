@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { map, catchError } from 'rxjs/operators';
 
 
 @Injectable({
@@ -20,8 +21,18 @@ export class AuthenticateService {
 
 
   signin(user) {
-    return this.http.post(this.apiurl + '/admin/signin', user);
-
+    return this.http.post(this.apiurl + '/admin/signin', user)
+          .pipe(map((response: any) => {
+            if(response && response.token){
+            this.setToken(response.token);
+            return true;
+            }
+            return false;
+          }),
+          catchError((err: any) => {
+            throw err;
+          }
+          ));
   }
 
   createShop(shop) {

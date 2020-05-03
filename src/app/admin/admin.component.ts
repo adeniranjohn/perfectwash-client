@@ -20,14 +20,13 @@ export class AdminComponent implements OnInit {
   }
   getAdmin(user){
     this.auth.signin(user).subscribe(
-    (data: any) => {
-      this.auth.setToken(data.token);
-      this.router.navigateByUrl('admin/adminboard');
-    },
-    err => {
-      this.error =  err.error;
-    }
-    );
+    (response) => {
+        console.log(response);
+        this.router.navigateByUrl('admin/adminboard');
+      }
+    ,(err) => {
+      this.error = err.error;
+    });
   }
 
 
