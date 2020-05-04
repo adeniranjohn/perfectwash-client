@@ -13,7 +13,7 @@ import { AuthenticateService } from '../authenticate.service';
 export class CustomersComponent implements OnInit {
   @Input() customers: Customer[];
   @Output() aCustomer: Customer;
-  
+
   constructor(
      private api: ApiService,
      private router: Router,
@@ -37,7 +37,6 @@ export class CustomersComponent implements OnInit {
 
   getShopCustomers(){
     const { phoneNumber } = this.auth.getPayLoad();
-    console.log(phoneNumber)
     this.api.getShopCustomers(phoneNumber)
     .subscribe((response: any) => {
       this.customers = response.customers;

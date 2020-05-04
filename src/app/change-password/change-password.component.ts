@@ -23,7 +23,6 @@ export class ChangePasswordComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id);
     this.api.getTheShop(this.id)
     .subscribe((response: any) => {
       this.editshop = response.shop[0];
@@ -33,11 +32,14 @@ export class ChangePasswordComponent implements OnInit {
 
   changePassword(value){
   const { phoneNumber, password, confirmPassword } = value;
-  console.log(phoneNumber, password, confirmPassword);
+    console.log(value);
   if (password === confirmPassword){
+
       this.api.changePassword(value)
       .subscribe((res: any) => {
+        console.log(res);
       },(err: any) => {
+        console.log(err)
         this.error = err.error;
       });
 
