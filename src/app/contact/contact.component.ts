@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  imageurl = '../../assets/bannermed.jpg';
   constructor() { }
 
   ngOnInit(): void {

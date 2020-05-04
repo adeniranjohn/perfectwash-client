@@ -11,9 +11,8 @@ import { Customer } from '../model/customer.model';
 
 
 export class HomeComponent implements OnInit {
-  thecustomer: Customer;
+  thecustomer: Customer
 
-  imageurl = '../../assets/bannermed.jpg';
   constructor(private api: ApiService) {
   }
 

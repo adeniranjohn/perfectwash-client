@@ -9,7 +9,6 @@ import { AuthenticateService } from '../authenticate.service';
   styleUrls: ['./reg-customer.component.css']
 })
 export class RegCustomerComponent implements OnInit {
-  imageurl = '../../assets/bannermed.jpg';
   constructor(
      private api: ApiService,
      private router: Router,

@@ -23,8 +23,6 @@ export class AdminboardComponent implements OnInit {
 
   }
 
-  signout(){
-    this.auth.deleteToken();
-  }
+
 
 }

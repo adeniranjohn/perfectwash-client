@@ -2,18 +2,17 @@
 
 <app-nav></app-nav>
 <mat-card class="mattop50 center">
-  <img mat-card-image [src]="imageurl" alt="Perfect Wash App">
   <h2>sign in your credentials</h2>
-  <mat-error>{{error}}</mat-error>
+  <mat-error><small>{{error}}</small></mat-error>
 <form #f="ngForm" (ngSubmit)="getAdmin(f.value)">
   <mat-form-field appearance="outline">
   <mat-label for="phoneNumber">Phone number</mat-label>
-  <input matInput required type="text" name="phoneNumber" placeholder="Shop number" auto-complete="phone" id="phonenumber" ngModel/>
+  <input matInput required type="text" name="phoneNumber" placeholder="Shop number" autocomplete="tel-local" id="phonenumber" ngModel/>
   </mat-form-field>
   <br>
   <mat-form-field appearance="outline">
   <mat-label for="password">Password</mat-label>
-  <input matInput required type="password" name="password" placeholder="Password" id="password"  auto-complete="current-password" ngModel/>
+  <input matInput required type="password" name="password" placeholder="Password" id="password"  autocomplete="current-password" ngModel/>
   </mat-form-field>
   <br>
   <button type="submit" color="primary" mat-raised-button>Sign in</button>

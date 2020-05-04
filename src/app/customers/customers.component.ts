@@ -13,7 +13,7 @@ import { AuthenticateService } from '../authenticate.service';
 export class CustomersComponent implements OnInit {
   @Input() customers: Customer[];
   @Output() aCustomer: Customer;
-  imageurl = '../../assets/bannermed.jpg';
+  
   constructor(
      private api: ApiService,
      private router: Router,
@@ -22,7 +22,6 @@ export class CustomersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.auth.isAdmin());
     if(this.auth.isAdmin()){
      this.getCustomers();
     }else{
@@ -41,7 +40,6 @@ export class CustomersComponent implements OnInit {
     console.log(phoneNumber)
     this.api.getShopCustomers(phoneNumber)
     .subscribe((response: any) => {
-      console.log(response);
       this.customers = response.customers;
     });
   }

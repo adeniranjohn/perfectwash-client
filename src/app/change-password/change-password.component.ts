@@ -10,7 +10,6 @@ import { Location } from '@angular/common';
   styleUrls: ['./change-password.component.css']
 })
 export class ChangePasswordComponent implements OnInit {
-  imageurl = '../../assets/bannermed.jpg';
   theroles = ['Supervisor', 'Administrator'];
   id;
   error='';

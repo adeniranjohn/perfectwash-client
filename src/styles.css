@@ -14,19 +14,23 @@ app-root {
 
 mat-card {
   margin: 10px;
-  max-width: 100%;
   padding: 5px;
 }
 
-strong {
-  text-align: left;
+
+img.mat-card-image {
+  display: block;
+  padding: 0px;
+  margin: 0px;
 }
 
 
+
+
 mat-nav-list {
+  padding: 0px;
+  margin: 0px;
   background-color: white;
-  display: block;
-  text-align: center;
 }
 
 a {
@@ -69,10 +73,6 @@ span.labels {
 }
 
 
-app-admin-nav {
-  margin-bottom: 50px;
-}
-
 form {
   text-align: center;
   padding: 5px;
@@ -80,18 +80,20 @@ form {
 
 .right {
   text-align: right;
+
 }
 
-.left {
+.leftt{
   text-align: left;
-}
+  }
 
 .center {
   text-align: center;
 }
 
 h2,
-h3 {
+h3,
+strong {
   text-align: center;
   color: #673ab7;
   padding: 1px;

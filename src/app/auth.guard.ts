@@ -16,8 +16,8 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):boolean {
       if(!this.auth.isLoggedin()){
-        this.router.navigateByUrl('/admin');
-        this.auth.deleteToken();
+        this.router.navigate(['/admin'], {queryParams: { returnUrl : state.url}});
+        this.auth.logout();
         return false;
       }else{
         return true;

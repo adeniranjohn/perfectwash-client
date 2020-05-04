@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticateService } from '../authenticate.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 
@@ -11,18 +11,18 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
   error='';
-  imageurl = '../../assets/bannermed.jpg';
   constructor(
     private auth: AuthenticateService,
-    private router: Router ) { }
+    private router: Router,
+    private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
   }
   getAdmin(user){
     this.auth.signin(user).subscribe(
     (response) => {
-        console.log(response);
-        this.router.navigateByUrl('admin/adminboard');
+        const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
+        this.router.navigate([returnUrl || 'admin/adminboard']);
       }
     ,(err) => {
       this.error = err.error;

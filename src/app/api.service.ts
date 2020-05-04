@@ -3,10 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 
-
-interface Customer {
-  data: object;
-}
+import { Customer } from './model/customer.model';
 
 
 @Injectable({
@@ -22,7 +19,7 @@ export class ApiService {
    }
 
    getCustomer(customer) {
-     return this.http.get<Customer>(`${this.apiurl}/${customer.phonenumber}`).pipe(
+     return this.http.get(`${this.apiurl}/${customer.phonenumber}`).pipe(
        map(res => {
          return res;
         }),

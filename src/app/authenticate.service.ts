@@ -53,7 +53,7 @@ export class AuthenticateService {
     localStorage.setItem('token', token);
   }
 
-  deleteToken(){
+  logout(){
     localStorage.removeItem('token');
     this.router.navigateByUrl('/admin');
   }

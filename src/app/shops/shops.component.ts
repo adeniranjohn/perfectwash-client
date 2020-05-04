@@ -11,7 +11,7 @@ import { ApiService } from '../api.service';
 export class ShopsComponent implements OnInit {
   @Input() shops: Shop[];
   @Output() theShop: Shop;
-  imageurl = '../../assets/bannermed.jpg';
+
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {

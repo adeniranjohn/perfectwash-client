@@ -1,7 +1,9 @@
 <app-admin-nav></app-admin-nav>
 <mat-card>
-  <img mat-card-image [src]="imageurl" alt="Perfect Wash App">
   <h2 class="white">washes</h2>
+
+  <a [routerLink]="['/admin/makeawash']" routerLinkActive="router-link-active" mat-button><strong>make a wash</strong></a>
+
 <app-customer
 *ngFor="let thecustomer of customers"
 (click)="customerSelected(thecustomer)"

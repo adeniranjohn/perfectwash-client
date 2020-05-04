@@ -12,7 +12,6 @@ import { Customer } from '../model/customer.model';
 export class EditCustomerComponent implements OnInit {
   id: string;
   @Input() thecustomer; aCustomer;
-  imageurl = '../../assets/bannermed.jpg';
   constructor(
     private route: ActivatedRoute,
     private api: ApiService,
