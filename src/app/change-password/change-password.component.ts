@@ -31,8 +31,9 @@ export class ChangePasswordComponent implements OnInit {
   }
 
   changePassword(value){
-  const { phoneNumber, password, confirmpassword } = value;
-    console.log(value);
+  const { password, confirmpassword } = value;
+  value.phoneNumber = this.editshop.phoneNumber;
+  console.log(value);
   if (password === confirmpassword){
 
       this.api.changePassword(value)
@@ -42,11 +43,12 @@ export class ChangePasswordComponent implements OnInit {
         console.log(err)
         this.error = err.error;
       });
+    this.router.navigateByUrl('/admin');
 
     }else{
-    this.error = 'Password not compatible';
+    this.error = 'Check: Confirm password';
     }
-  this.router.navigateByUrl('admin/adminBoard');
+
 }
 
 }

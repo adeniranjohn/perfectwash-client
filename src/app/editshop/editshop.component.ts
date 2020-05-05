@@ -16,7 +16,6 @@ export class EditshopComponent implements OnInit {
   totalWashAmount;
   dailyWashes;
   wash;
-  imageurl = '../../assets/bannermed.jpg';
   constructor(
     private route: ActivatedRoute,
     private api: ApiService,
