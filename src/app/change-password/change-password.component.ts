@@ -31,9 +31,9 @@ export class ChangePasswordComponent implements OnInit {
   }
 
   changePassword(value){
-  const { phoneNumber, password, confirmPassword } = value;
+  const { phoneNumber, password, confirmpassword } = value;
     console.log(value);
-  if (password === confirmPassword){
+  if (password === confirmpassword){
 
       this.api.changePassword(value)
       .subscribe((res: any) => {

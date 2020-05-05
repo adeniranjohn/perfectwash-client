@@ -1,25 +1,30 @@
-body,
-app-root {
+body {
   max-width: 960px;
   margin: 0 auto;
+  padding: 0;
+  width: 100%;
+
 
 }
-
+body.mat-typography {
+  margin: 0;
+  padding: 0;
+}
 
 app-root {
   margin: 0;
   padding: 0;
 
+
 }
 
 mat-card {
-  margin: 10px;
-  padding: 5px;
+  margin: 5px;
 }
-
 
 img.mat-card-image {
   display: block;
+  max-width: 100%;
   padding: 0px;
   margin: 0px;
 }
@@ -31,6 +36,7 @@ mat-nav-list {
   padding: 0px;
   margin: 0px;
   background-color: white;
+  max-width: 100%;
 }
 
 a {
@@ -39,16 +45,6 @@ a {
   margin: 0 auto;
 }
 
-
-.header {
-  position: fixed;
-  top: 0px;
-  z-index: 1;
-  margin: 0px;
-  display: block;
-  width: 100%;
-  margin-bottom: 50px;
-}
 
 span {
   font-size: 0.8rem;
@@ -83,9 +79,9 @@ form {
 
 }
 
-.leftt{
+.leftt {
   text-align: left;
-  }
+}
 
 .center {
   text-align: center;

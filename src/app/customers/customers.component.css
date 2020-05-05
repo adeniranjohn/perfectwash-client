@@ -1,12 +1,8 @@
-mat-card {
-  background-color: #673ab7;
-}
-
 a {
   display: block;
   text-align: center;
-  background-color: white;
-  color: #673ab7;
+  background-color: #673ab7;
+  color: white;
   padding: 5px;
-  margin:5px;
+  margin: 5px;
 }
