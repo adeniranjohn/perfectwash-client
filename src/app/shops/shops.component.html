@@ -1,7 +1,8 @@
 <app-admin-nav></app-admin-nav>
 <mat-card>
-<h2>shops</h2>
+
 <a [routerLink]="['/admin/makeawash']" routerLinkActive="router-link-active" mat-button>create a shop</a>
+<h2>shops</h2>
 <app-shop
 *ngFor="let ashop of shops"
 (click)="selectShop(ashop)"
