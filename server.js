@@ -7,7 +7,7 @@ const app = express();
 // Serve only the static files form the dist directory
 app.use(express.static('./dist/client-angular'));
 
-app.get('/*', function(req,res) {
+app.get('/*', async (req,res) =>  {
 
 res.sendFile(path.join(__dirname,'/dist/client-angular/index.html'));
 });
