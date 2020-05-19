@@ -6,7 +6,9 @@
     "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
+    "analyze": "webpack-bundle-analyzer dist/client-angular/stats-es2015.json",
     "lint": "ng lint",
+    "build:stats": "ng build --stats-json",
     "e2e": "ng e2e",
     "heroku-postbuild": "ng build --prod"
   },
