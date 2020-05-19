@@ -11,6 +11,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const MaterialComponents = [
   MatTableModule,
@@ -23,8 +24,8 @@ const MaterialComponents = [
   MatSelectModule,
   MatDividerModule,
   MatListModule,
-  MatTabsModule
-
+  MatTabsModule,
+  MatProgressSpinnerModule
 ];
 
 @NgModule({
