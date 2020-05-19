@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -65,69 +64,6 @@ export function getToken(){
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        component: HomeComponent
-      },
-      {
-        path: 'home',
-        component: HomeComponent
-      },
-      {
-        path: 'contact',
-        component: ContactComponent
-      },
-      {
-        path: 'admin',
-        component: AdminComponent
-      },
-      {
-        path: 'admin/createshop',
-        component: CreateshopComponent,
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'admin/adminboard',
-        component: AdminboardComponent,
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'admin/washes',
-        component: CustomersComponent,
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'admin/makeawash',
-        component: RegCustomerComponent,
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'admin/washes/:id',
-        component: EditCustomerComponent,
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'admin/shops/:id/edit',
-        component: ChangePasswordComponent,
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'admin/shops',
-        component: ShopsComponent,
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'admin/shops/:id',
-        component: EditshopComponent,
-        canActivate: [AuthGuard]
-      },
-      {
-        path: '**',
-        redirectTo: 'home'
-      }
-
-    ]),
     BrowserAnimationsModule,
     MaterialModule,
   ],
