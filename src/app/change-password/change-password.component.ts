@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Shop } from '../model/shop.model';
@@ -9,11 +9,12 @@ import { Location } from '@angular/common';
   templateUrl: './change-password.component.html',
   styleUrls: ['./change-password.component.css']
 })
-export class ChangePasswordComponent implements OnInit {
+export class ChangePasswordComponent implements OnInit, OnDestroy {
   theroles = ['Supervisor', 'Administrator'];
   id;
   error='';
   editshop: Shop;
+  shopSub: any;
   constructor(
     private api: ApiService,
     private route: ActivatedRoute,
@@ -23,7 +24,7 @@ export class ChangePasswordComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.api.getTheShop(this.id)
+    this.shopSub = this.api.getTheShop(this.id)
     .subscribe((response: any) => {
       this.editshop = response.shop[0];
     });
@@ -50,5 +51,9 @@ export class ChangePasswordComponent implements OnInit {
     }
 
 }
+
+ ngOnDestroy(): void{
+   this.shopSub.unsubscribe();
+ }
 
 }

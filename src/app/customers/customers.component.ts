@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Customer } from '../model/customer.model';
 import { Router } from '@angular/router';
@@ -10,9 +10,10 @@ import { AuthenticateService } from '../authenticate.service';
   templateUrl: './customers.component.html',
   styleUrls: ['./customers.component.css']
 })
-export class CustomersComponent implements OnInit {
+export class CustomersComponent implements OnInit, OnDestroy {
   @Input() customers: Customer[];
   @Output() aCustomer: Customer;
+  customersSub: any;
 
   constructor(
      private api: ApiService,
@@ -37,18 +38,21 @@ export class CustomersComponent implements OnInit {
 
   getShopCustomers(){
     const { phoneNumber } = this.auth.getPayLoad();
-    this.api.getShopCustomers(phoneNumber)
+    this.customersSub = this.api.getShopCustomers(phoneNumber)
     .subscribe((response: any) => {
       this.customers = response.customers;
     });
   }
 
   getCustomers(): boolean{
-    this.api.getCustomers()
+    this.customersSub = this.api.getCustomers()
     .subscribe((response: any) => {
       this.customers = response.data;
     });
     return false;
   }
 
+  ngOnDestroy(): void{
+    this.customersSub.unsubscribe();
+  }
 }

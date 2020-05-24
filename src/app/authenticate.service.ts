@@ -73,7 +73,7 @@ export class AuthenticateService {
    return !this.jwtHelper.isTokenExpired(this.getToken());
   }
 
-  isAdmin():boolean {
+  isAdmin(): boolean {
     const { role } = this.getPayLoad();
     if(role === 'Administrator'){
       return true;

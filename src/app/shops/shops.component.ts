@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Shop } from '../model/shop.model';
 import { ApiService } from '../api.service';
@@ -8,9 +8,10 @@ import { ApiService } from '../api.service';
   templateUrl: './shops.component.html',
   styleUrls: ['./shops.component.css']
 })
-export class ShopsComponent implements OnInit {
+export class ShopsComponent implements OnInit, OnDestroy{
   @Input() shops: Shop[];
   @Output() theShop: Shop;
+  shopsSub: any;
 
   constructor(private router: Router, private api: ApiService) { }
 
@@ -25,9 +26,13 @@ export class ShopsComponent implements OnInit {
 
 
   getShops(){
-    this.api.getShops()
+    this.shopsSub = this.api.getShops()
     .subscribe((res: any) => {
       this.shops = res.shops;
     } );
+  }
+
+  ngOnDestroy(): void {
+    this.shopsSub.unsubscribe();
   }
 }

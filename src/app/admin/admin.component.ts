@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthenticateService } from '../authenticate.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 
 
@@ -9,8 +10,9 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent implements OnInit, OnDestroy {
   error='';
+  private authSubscription: Subscription;
   constructor(
     private auth: AuthenticateService,
     private router: Router,
@@ -19,7 +21,7 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
   getAdmin(user){
-    this.auth.signin(user).subscribe(
+    this.authSubscription = this.auth.signin(user).subscribe(
     (response) => {
         const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
         this.router.navigate([returnUrl || 'admin/adminboard']);
@@ -27,6 +29,10 @@ export class AdminComponent implements OnInit {
     ,(err) => {
       this.error = err.error;
     });
+  }
+
+  ngOnDestroy(): void {
+    this.authSubscription.unsubscribe();
   }
 
 

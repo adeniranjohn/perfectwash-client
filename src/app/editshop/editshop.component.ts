@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, OnDestroy } from '@angular/core';
 import {Location } from '@angular/common';
 import { ApiService } from '../api.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -9,13 +9,14 @@ import { Shop } from '../model/shop.model';
   templateUrl: './editshop.component.html',
   styleUrls: ['./editshop.component.css']
 })
-export class EditshopComponent implements OnInit {
+export class EditshopComponent implements OnInit, OnDestroy {
   @Input() theshop: Shop;
   id;
   totalWash;
   totalWashAmount;
   dailyWashes;
   wash;
+  shopSub: any;
   constructor(
     private route: ActivatedRoute,
     private api: ApiService,
@@ -24,7 +25,7 @@ export class EditshopComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.api.getTheShop(this.id)
+    this.shopSub = this.api.getTheShop(this.id)
     .subscribe((response: any) => {
       this.theshop = response.shop[0];
       this.totalWash = (response.washes).length;
@@ -50,6 +51,10 @@ export class EditshopComponent implements OnInit {
     this.api.deleteShop(this.theshop._id)
     .subscribe(res => res);
     this.location.back();
+  }
+
+  ngOnDestroy(): void{
+    this.shopSub.unsubscribe();
   }
 
 }

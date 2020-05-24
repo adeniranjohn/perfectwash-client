@@ -9,6 +9,7 @@ import { AuthenticateService } from '../authenticate.service';
   styleUrls: ['./reg-customer.component.css']
 })
 export class RegCustomerComponent implements OnInit {
+  custSub: any;
   constructor(
      private api: ApiService,
      private router: Router,
@@ -21,7 +22,7 @@ export class RegCustomerComponent implements OnInit {
     console.log(this.auth.getPayLoad());
     const { phoneNumber } = this.auth.getPayLoad();
     user.shopPhone = phoneNumber;
-    this.api.postCustomer(user)
+    this.custSub = this.api.postCustomer(user)
     .subscribe(data => {
     if(data){
       this.router.navigate(['/admin/adminboard']);
@@ -29,6 +30,10 @@ export class RegCustomerComponent implements OnInit {
     });
   }
 
+  ngOnDestroy(): void {
+    this.custSub.unsubscribe();
+
+  }
 
 
 }
