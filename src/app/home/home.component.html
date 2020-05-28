@@ -6,7 +6,7 @@
     <mat-form-field appearance="outline">
       <mat-label for="phonenumber">Phone number</mat-label>
     <input matInput size="10"  required type="text" placeholder="Kindly enter your Phone number" id="phonenumber" name="phonenumber" ngModel/>
-  <button color="accent" type="submit" mat-raised-button >Check laundry status</button>
+  <button color="accent" type="submit" mat-raised-button ><mat-spinner *ngIf="show" [strokeWidth]="2" [diameter]="20"></mat-spinner>Check laundry status</button>
   </mat-form-field>
   </form>
 </mat-card>

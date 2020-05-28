@@ -13,6 +13,7 @@ import { Customer } from '../model/customer.model';
 export class HomeComponent implements OnInit, OnDestroy {
   thecustomer: Customer;
   custSub: any;
+  show = false;
 
   constructor(private api: ApiService) {
   }
@@ -21,6 +22,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   getCustomer(phonenumber) {
+    this.show = true;
     this.custSub = this.api.getCustomer(phonenumber)
       .subscribe((theCustomer: any) => {
         const customer = theCustomer.data;
@@ -29,10 +31,13 @@ export class HomeComponent implements OnInit, OnDestroy {
         });
 
       });
+    this.show = false;
   }
 
   ngOnDestroy(): void{
+    if(this.custSub){
     this.custSub.unsubscribe();
+    }
   }
 }
 

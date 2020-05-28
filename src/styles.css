@@ -21,6 +21,10 @@ app-root {
   padding: 0;
 }
 
+mat-spinner {
+  display: inline-block;
+}
+
 app-nav,
 app-admin-nav {
   position: sticky;

@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
 })
 export class AdminComponent implements OnInit, OnDestroy {
   error='';
+  show = false;
   private authSubscription: Subscription;
   constructor(
     private auth: AuthenticateService,
@@ -21,6 +22,7 @@ export class AdminComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
   getAdmin(user){
+    this.show = true;
     this.authSubscription = this.auth.signin(user).subscribe(
     (response) => {
         const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
@@ -29,10 +31,13 @@ export class AdminComponent implements OnInit, OnDestroy {
     ,(err) => {
       this.error = err.error;
     });
+    this.show = false;
   }
 
   ngOnDestroy(): void {
+    if (this.authSubscription){
     this.authSubscription.unsubscribe();
+    }
   }
 
 

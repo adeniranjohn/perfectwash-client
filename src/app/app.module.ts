@@ -56,7 +56,7 @@ export function getToken(){
     JwtModule.forRoot({
       config: {
         tokenGetter: getToken,
-        whitelistedDomains: ['http://localhost:4200/', 'http://localhost:4200/admin' ],
+        whitelistedDomains: [ ],
         blacklistedRoutes: []
       }
     }),

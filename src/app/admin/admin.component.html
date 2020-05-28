@@ -15,7 +15,7 @@
   <input matInput required type="password" name="password" placeholder="Password" id="password"  autocomplete="current-password" ngModel/>
   </mat-form-field>
   <br>
-  <button type="submit" color="primary" mat-raised-button>Sign in</button>
+  <button type="submit" color="primary" mat-raised-button><mat-spinner *ngIf="show" [strokeWidth]="2" [diameter]="20"></mat-spinner>Sign in</button>
 </form>
 </mat-card>
 
