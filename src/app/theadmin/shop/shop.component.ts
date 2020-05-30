@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Shop } from '../model/shop.model';
-import { ApiService } from '../api.service';
+import { Shop } from '../../model/shop.model';
+import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-shop',

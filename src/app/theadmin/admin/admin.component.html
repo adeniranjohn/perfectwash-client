@@ -1,6 +1,11 @@
 
+<img mat-card-image [src]="imageurl" alt="Perfect Wash App">
+<mat-nav-list class="nav">
+  <a [routerLink]="['/']" routerLinkActive="router-link-active" mat-button color="primary">🏚 Home</a>
+  <a [routerLink]="['/contact']" routerLinkActive="router-link-active" mat-button color="primary">&#9742; Contact</a>
+</mat-nav-list>
 
-<app-nav></app-nav>
+
 <mat-card>
   <h2>sign in your credentials</h2>
   <mat-error><small>{{error}}</small></mat-error>

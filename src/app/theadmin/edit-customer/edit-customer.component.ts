@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from '../api.service';
+import { ApiService } from '../../api.service';
 import { Location } from '@angular/common';
-import { Customer } from '../model/customer.model';
+import { Customer } from '../../model/customer.model';
 
 @Component({
   selector: 'app-edit-customer',

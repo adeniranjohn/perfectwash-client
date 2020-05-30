@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, OnDestroy } from '@angular/core';
 import {Location } from '@angular/common';
-import { ApiService } from '../api.service';
+import { ApiService } from '../../api.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Shop } from '../model/shop.model';
+import { Shop } from '../../model/shop.model';
 
 @Component({
   selector: 'app-editshop',

@@ -1,0 +1,8 @@
+<img mat-card-image [src]="imageurl" alt="Perfect Wash App">
+<mat-nav-list>
+  <a [routerLink]="['/']" routerLinkActive="router-link-active" mat-button color="primary">🏘 home</a>
+  <a [routerLink]="['/admin/adminboard']" routerLinkActive="router-link-active" mat-button color="primary">👕 washes</a>
+  <a [routerLink]="['/admin/shops']" routerLinkActive="router-link-active" *ngIf=isAdmin mat-button color="primary">🏬 shops</a>
+  <a (click)="logout()" mat-raised-button color="warn">logout</a>
+</mat-nav-list>
+

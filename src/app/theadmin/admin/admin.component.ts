@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AuthenticateService } from '../authenticate.service';
+import { AuthenticateService } from '../../authenticate.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -13,6 +13,7 @@ import { Subscription } from 'rxjs';
 export class AdminComponent implements OnInit, OnDestroy {
   error='';
   show = false;
+  imageurl = '../../assets/bannermed.jpg';
   private authSubscription: Subscription;
   constructor(
     private auth: AuthenticateService,

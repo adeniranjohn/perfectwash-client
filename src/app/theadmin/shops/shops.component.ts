@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { Shop } from '../model/shop.model';
-import { ApiService } from '../api.service';
+import { Shop } from '../../model/shop.model';
+import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-shops',

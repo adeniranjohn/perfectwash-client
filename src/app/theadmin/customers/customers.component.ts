@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
-import { ApiService } from '../api.service';
-import { Customer } from '../model/customer.model';
+import { ApiService } from '../../api.service';
+import { Customer } from '../../model/customer.model';
 import { Router } from '@angular/router';
-import { AuthenticateService } from '../authenticate.service';
+import { AuthenticateService } from '../../authenticate.service';
 
 
 @Component({
@@ -14,6 +14,7 @@ export class CustomersComponent implements OnInit, OnDestroy {
   @Input() customers: Customer[];
   @Output() aCustomer: Customer;
   customersSub: any;
+  customerSub: any;
 
   constructor(
      private api: ApiService,
@@ -24,7 +25,7 @@ export class CustomersComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     if(this.auth.isAdmin()){
-     this.getCustomers();
+      this.getCustomers();
     }else{
     this.getShopCustomers();
     }
@@ -45,7 +46,7 @@ export class CustomersComponent implements OnInit, OnDestroy {
   }
 
   getCustomers(): boolean{
-    this.customersSub = this.api.getCustomers()
+    this.customerSub = this.api.getCustomers()
     .subscribe((response: any) => {
       this.customers = response.data;
     });
@@ -53,6 +54,12 @@ export class CustomersComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void{
+    if(this.customersSub){
     this.customersSub.unsubscribe();
+    }
+
+    if(this.customerSub){
+      this.customerSub.unsubscribe();
+    }
   }
 }

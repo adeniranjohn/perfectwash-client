@@ -1,8 +1,7 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ApiService } from '../api.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { ApiService } from '../../api.service';
 import { Router } from '@angular/router';
-import { Customer } from '../model/customer.model';
+import { Customer } from '../../model/customer.model';
 
 
 @Component({

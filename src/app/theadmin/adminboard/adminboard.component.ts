@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ApiService } from '../api.service';
-import { Customer } from '../model/customer.model';
-import { AuthenticateService } from '../authenticate.service';
-import { Shop } from '../model/shop.model';
+import { ApiService } from '../../api.service';
+import { Customer } from '../../model/customer.model';
+import { AuthenticateService } from '../../authenticate.service';
+import { Shop } from '../../model/shop.model';
 
 @Component({
   selector: 'app-adminboard',

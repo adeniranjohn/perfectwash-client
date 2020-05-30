@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { ApiService } from '../api.service';
+import { ApiService } from '../../api.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Shop } from '../model/shop.model';
+import { Shop } from '../../model/shop.model';
 import { Location } from '@angular/common';
 
 @Component({
