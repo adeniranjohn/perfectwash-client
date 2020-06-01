@@ -1,11 +1,11 @@
 <app-admin-nav></app-admin-nav>
 <mat-card>
-  
+
 <h2>update wash status</h2>
 <form #customer="ngForm" (ngSubmit)="saveCustomerStatus(customer.value)">
   <mat-form-field appearance="outline">
     <mat-label for="status">Status</mat-label>
-  <select  id="status" name="status" [(ngModel)]="thecustomer.status" matNativeControl required>
+  <select  id='status' name="status" [(ngModel)]="thecustomer.status" matNativeControl required>
     <option value="Peceived">Received</option>
     <option value="Washing">Washing</option>
     <option value="Drying">Drying</option>
@@ -38,6 +38,6 @@
   <button mat-raised-button type="submit" color="primary" > Save </button>
 </form>
   <h2>{{ thecustomer.eventDate | date:'medium' }}</h2>
-  <button (click)="cancel()" color="basic" mat-raised-button>Cancel</button>
+  <button (click)="cancel()" color="accent" mat-raised-button>&#8592; Back</button>
   <button (click)="deleteItems()" color="warn" mat-raised-button>Delete</button>
 </mat-card>

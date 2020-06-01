@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
 
 import { Customer } from './model/customer.model';
 
@@ -18,7 +18,7 @@ export class ApiService {
 
    }
 
-   getCustomer(customer) {
+  getCustomer(customer): Observable<any> {
      return this.http.get(`${this.apiurl}/${customer.phonenumber}`).pipe(
        map(res => {
          return res;
@@ -27,48 +27,48 @@ export class ApiService {
      );
    }
 
-   getCustomers(){
+  getCustomers(): Observable<any>{
       return this.http.get<Customer>(this.apiurl + '/admin/customers');
     }
 
-    getShopCustomers(phoneNumber){
+  getShopCustomers(phoneNumber): Observable<any>{
       return this.http.get<Customer>(this.apiurl + `/admin/${phoneNumber}/customers`);
     }
 
-    getTheCustomer(id){
+  getTheCustomer(id): Observable<any>{
       return this.http.get<Customer>(`${this.apiurl}/admin/customers/${id}`);
     }
 
-    postCustomer(user){
+  postCustomer(user): Observable<any>{
       return this.http.post(`${this.apiurl}/admin/customers`, user);
     }
 
-    deleteCustomer(id){
+  deleteCustomer(id): Observable<any>{
       return this.http.delete(this.apiurl + '/admin/customers/' + id);
     }
 
-    saveCustomer(customer){
+  saveCustomer(customer): Observable<any>{
       return this.http.put(this.apiurl + '/admin/customers/' + customer._id, customer);
     }
 
-    changePassword(value){
+  changePassword(value): Observable<any>{
       console.log(value);
       return this.http.put(this.apiurl + '/admin/changePassword', value);
     }
 
-    getShops(){
+  getShops(): Observable<any>{
       return this.http.get(`${this.apiurl}/admin/shops`);
     }
 
-    getTheShop(id){
+  getTheShop(id): Observable<any>{
       return this.http.get(`${this.apiurl}/admin/shops/${id}`);
     }
 
-    deleteShop(id){
+  deleteShop(id): Observable<any>{
       return this.http.delete(this.apiurl + '/admin/shops/' + id);
     }
 
-    getTotalWash(phone){
+  getTotalWash(phone): Observable<any>{
       return this.http.get(`${this.apiurl}/shops/${phone}`);
     }
 

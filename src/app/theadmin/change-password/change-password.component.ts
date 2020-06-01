@@ -52,6 +52,10 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
 
 }
 
+back(){
+  this.location.back();
+}
+
  ngOnDestroy(): void{
    this.shopSub.unsubscribe();
  }

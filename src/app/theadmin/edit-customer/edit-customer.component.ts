@@ -11,7 +11,7 @@ import { Customer } from '../../model/customer.model';
 })
 export class EditCustomerComponent implements OnInit, OnDestroy {
   id: string;
-  @Input() thecustomer; aCustomer;
+  @Input() thecustomer: Customer; aCustomer;
   custSub: any;
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +26,8 @@ export class EditCustomerComponent implements OnInit, OnDestroy {
     this.custSub = this.api.getTheCustomer(this.id)
     .subscribe((response: any) => {
       this.thecustomer = response.customer[0];
-    });
+    },
+    );
   }
 
 

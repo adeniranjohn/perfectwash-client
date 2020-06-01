@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticateService } from '../../authenticate.service';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-createshop',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CreateshopComponent implements OnInit {
   imageurl = '../../assets/bannermed.jpg';
-  constructor(private auth: AuthenticateService, private router: Router) { }
+  constructor(private auth: AuthenticateService, private router: Router, private location: Location) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +19,9 @@ export class CreateshopComponent implements OnInit {
     this.auth.createShop(shop);
   }
 
+  back(){
+    this.location.back();
+  }
 
 
 }
