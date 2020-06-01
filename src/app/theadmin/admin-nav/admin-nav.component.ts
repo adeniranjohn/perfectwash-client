@@ -7,7 +7,7 @@ import { AuthenticateService } from '../../authenticate.service';
   styleUrls: ['./admin-nav.component.css']
 })
 export class AdminNavComponent implements OnInit {
-  imageurl = '../../assets/bannermed.jpg';
+  
   isAdmin = false;
   constructor(private auth: AuthenticateService) {
 

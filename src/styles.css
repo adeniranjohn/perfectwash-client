@@ -21,8 +21,10 @@ app-root {
   padding: 0;
 }
 
-mat-spinner {
-  display: inline-block;
+mat-progress-spinner {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
 }
 
 app-nav,
@@ -31,6 +33,13 @@ app-admin-nav {
   top: 0;
   z-index: 1;
   margin-bottom: 50px;
+
+
+
+}
+
+a.end {
+ align-self: flex-end;
 
 }
 
@@ -45,18 +54,21 @@ img.mat-card-image {
   margin: 0px;
 }
 
-
+mat-nav-list.mat-list-base {
+  display: flex;
+  justify-self: start;
+}
 
 
 mat-nav-list {
   padding: 0px;
   margin: 0px;
+
   background-color: white;
-  max-width: 100%;
+  width: 100%;
 }
 
 a {
-  display: inline-block;
   padding: 5px;
   margin: 0 auto;
 }

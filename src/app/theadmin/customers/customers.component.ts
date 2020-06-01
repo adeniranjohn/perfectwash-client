@@ -3,6 +3,7 @@ import { ApiService } from '../../api.service';
 import { Customer } from '../../model/customer.model';
 import { Router } from '@angular/router';
 import { AuthenticateService } from '../../authenticate.service';
+import { finalize } from 'rxjs/operators';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class CustomersComponent implements OnInit, OnDestroy {
   @Output() aCustomer: Customer;
   customersSub: any;
   customerSub: any;
-
+  loading = false;
   constructor(
      private api: ApiService,
      private router: Router,
@@ -24,11 +25,12 @@ export class CustomersComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.loading = true;
     if(this.auth.isAdmin()){
       this.getCustomers();
-    }else{
+      }else{
     this.getShopCustomers();
-    }
+       }
   }
 
   customerSelected(customer: Customer){
@@ -40,6 +42,7 @@ export class CustomersComponent implements OnInit, OnDestroy {
   getShopCustomers(){
     const { phoneNumber } = this.auth.getPayLoad();
     this.customersSub = this.api.getShopCustomers(phoneNumber)
+    .pipe(finalize(() => this.loading = false))
     .subscribe((response: any) => {
       this.customers = response.customers;
     });

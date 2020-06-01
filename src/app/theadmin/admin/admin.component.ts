@@ -13,7 +13,6 @@ import { Subscription } from 'rxjs';
 export class AdminComponent implements OnInit, OnDestroy {
   error='';
   show = false;
-  imageurl = '../../assets/bannermed.jpg';
   private authSubscription: Subscription;
   constructor(
     private auth: AuthenticateService,
