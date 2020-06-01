@@ -1,6 +1,8 @@
 <mat-nav-list>
   <a [routerLink]="['/admin/adminboard']" routerLinkActive="router-link-active" mat-button color="primary">👕 washes</a>
   <a [routerLink]="['/admin/shops']" routerLinkActive="router-link-active" *ngIf=isAdmin mat-button color="primary">🏬 shops</a>
-  <a (click)="logout()" class="end" mat-raised-button color="warn">logout</a>
 </mat-nav-list>
 
+<span>
+  <a (click)="logout()" mat-raised-button color="warn">logout</a>
+</span>

@@ -31,8 +31,9 @@ export class RegCustomerComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
+    if(this.custSub){
     this.custSub.unsubscribe();
-
+    }
   }
 
 

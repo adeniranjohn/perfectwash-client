@@ -3,8 +3,7 @@ app-root {
   max-width: 960px;
   margin: 0 auto;
   padding: 0;
-  display: block;
-  text-align: center;
+
 
 
 }
@@ -29,19 +28,19 @@ mat-progress-spinner {
 
 app-nav,
 app-admin-nav {
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 1;
   margin-bottom: 50px;
+  max-width: 100%;
 
 
 
 }
 
-a.end {
- align-self: flex-end;
-
-}
 
 mat-card {
   margin: 5px;
@@ -54,18 +53,13 @@ img.mat-card-image {
   margin: 0px;
 }
 
-mat-nav-list.mat-list-base {
-  display: flex;
-  justify-self: start;
-}
+
 
 
 mat-nav-list {
   padding: 0px;
   margin: 0px;
-
   background-color: white;
-  width: 100%;
 }
 
 a {
