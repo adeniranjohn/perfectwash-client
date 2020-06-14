@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Customer } from '../model/customer.model';
+import { finalize } from 'rxjs/operators';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { Customer } from '../model/customer.model';
 export class HomeComponent implements OnInit, OnDestroy {
   thecustomer: Customer;
   custSub: any;
-  show = false;
+  loading = false;
 
   constructor(private api: ApiService) {
   }
@@ -22,8 +23,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   getCustomer(phonenumber) {
-    this.show = true;
+    this.loading = true;
     this.custSub = this.api.getCustomer(phonenumber)
+      .pipe(finalize(() => this.loading = false))
       .subscribe((theCustomer: any) => {
         const customer = theCustomer.data;
         this.thecustomer = customer.filter((c: Customer) => {
@@ -31,7 +33,6 @@ export class HomeComponent implements OnInit, OnDestroy {
         });
 
       });
-    this.show = false;
   }
 
   ngOnDestroy(): void{

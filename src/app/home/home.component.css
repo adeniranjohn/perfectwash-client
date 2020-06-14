@@ -1,9 +1,14 @@
 button {
-  margin-top: 10px;
+  margin: 10px;
+  display: inline;
 }
 
 app-nav {
   display: block;
 }
 
+mat-progress-spinner {
+  display: inline;
+  padding: 0 15px;
+}
 
