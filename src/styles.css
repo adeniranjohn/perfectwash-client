@@ -140,7 +140,9 @@ app-footer {
   bottom: 0;
 
 }
-
+mat-error {
+  text-align: center;
+}
 
 footer {
   display: block;

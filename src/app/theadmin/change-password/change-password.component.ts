@@ -12,9 +12,10 @@ import { Location } from '@angular/common';
 export class ChangePasswordComponent implements OnInit, OnDestroy {
   theroles = ['Supervisor', 'Administrator'];
   id;
-  error='';
+  error ='';
   editshop: Shop;
   shopSub: any;
+  changeSub: any;
   constructor(
     private api: ApiService,
     private route: ActivatedRoute,
@@ -37,14 +38,14 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
   console.log(value);
   if (password === confirmpassword){
 
-      this.api.changePassword(value)
+      this.changeSub = this.api.changePassword(value)
       .subscribe((res: any) => {
-        console.log(res);
+        this.router.navigateByUrl('/admin');
       },(err: any) => {
-        console.log(err)
         this.error = err.error;
+        this.router.navigateByUrl('/admin');
       });
-    this.router.navigateByUrl('/admin');
+
 
     }else{
     this.error = 'Check: Confirm password';
@@ -57,7 +58,12 @@ back(){
 }
 
  ngOnDestroy(): void{
+  if (this.shopSub){
    this.shopSub.unsubscribe();
+  }
+  if (this.changeSub){
+    this.changeSub.unsubscribe();
+  }
  }
 
 }

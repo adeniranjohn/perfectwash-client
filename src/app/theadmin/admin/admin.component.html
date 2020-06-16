@@ -6,7 +6,7 @@
 
 
 <mat-card>
-  <h2>sign in your credentials</h2>
+  <h2>Sign in</h2>
   <mat-error><small>{{error}}</small></mat-error>
 <form #f="ngForm" (ngSubmit)="getAdmin(f.value)">
   <mat-form-field appearance="outline">
@@ -19,7 +19,14 @@
   <input matInput required type="password" name="password" placeholder="Password" id="password"  autocomplete="current-password" ngModel/>
   </mat-form-field>
   <br>
-  <button type="submit" color="primary" mat-raised-button><mat-spinner *ngIf="show" [strokeWidth]="2" [diameter]="20"></mat-spinner>Sign in</button>
+  <button type="submit" color="primary" mat-raised-button>
+    <mat-progress-spinner
+    *ngIf="loading"
+    color="warn"
+    mode="indeterminate"
+    diameter="20"
+    strokeWidth = "1">
+    </mat-progress-spinner>Sign in</button>
 </form>
 </mat-card>
 

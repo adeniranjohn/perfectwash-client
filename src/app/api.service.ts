@@ -11,7 +11,7 @@ import { Customer } from './model/customer.model';
 })
 
 export class ApiService {
-  // private apiurl = `http://localhost:7000/api/v1`;
+   // private apiurl = `http://localhost:7000/api/v1`;
   private apiurl = `https://quiet-badlands-83944.herokuapp.com/api/v1`;
   customers: any;
   constructor(private http: HttpClient) {

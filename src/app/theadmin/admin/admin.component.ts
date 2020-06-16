@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthenticateService } from '../../authenticate.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 
 
 
@@ -12,7 +13,7 @@ import { Subscription } from 'rxjs';
 })
 export class AdminComponent implements OnInit, OnDestroy {
   error='';
-  show = false;
+  loading = false;
   private authSubscription: Subscription;
   constructor(
     private auth: AuthenticateService,
@@ -22,8 +23,10 @@ export class AdminComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
   getAdmin(user){
-    this.show = true;
-    this.authSubscription = this.auth.signin(user).subscribe(
+    this.loading = true;
+    this.authSubscription = this.auth.signin(user)
+    .pipe(finalize(() => this.loading = false))
+    .subscribe(
     (response) => {
         const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
         this.router.navigate([returnUrl || 'admin/adminboard']);
@@ -31,7 +34,6 @@ export class AdminComponent implements OnInit, OnDestroy {
     ,(err) => {
       this.error = err.error;
     });
-    this.show = false;
   }
 
   ngOnDestroy(): void {
