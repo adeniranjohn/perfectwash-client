@@ -135,9 +135,11 @@ strong {
 }
 
 app-footer {
-  display: block;
   position: fixed;
   bottom: 0;
+  right: 0;
+  left: 0;
+  
 
 }
 mat-error {

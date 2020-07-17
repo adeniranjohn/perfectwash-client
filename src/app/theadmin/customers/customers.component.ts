@@ -16,7 +16,8 @@ export class CustomersComponent implements OnInit, OnDestroy {
   @Output() aCustomer: Customer;
   customersSub: any;
   customerSub: any;
-  loading = false;
+  loading: boolean;
+
   constructor(
      private api: ApiService,
      private router: Router,
@@ -50,6 +51,7 @@ export class CustomersComponent implements OnInit, OnDestroy {
 
   getCustomers(): boolean{
     this.customerSub = this.api.getCustomers()
+    .pipe(finalize(() => this.loading = false))
     .subscribe((response: any) => {
       this.customers = response.data;
     });
