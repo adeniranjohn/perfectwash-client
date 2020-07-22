@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       .pipe(finalize(() => this.loading = false))
       .subscribe((theCustomer: any) => {
         const customer = theCustomer.data;
+        this.message = '';
         if (customer.length === 0) {
           this.message = '*Not yet registered';
           console.log(this.message);
