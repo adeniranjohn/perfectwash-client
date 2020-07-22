@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   thecustomer: Customer;
   custSub: any;
   loading = false;
+  message: string;
 
   constructor(private api: ApiService) {
   }
@@ -28,6 +29,11 @@ export class HomeComponent implements OnInit, OnDestroy {
       .pipe(finalize(() => this.loading = false))
       .subscribe((theCustomer: any) => {
         const customer = theCustomer.data;
+        if (customer.length === 0) {
+          this.message = '*Not yet registered';
+          console.log(this.message);
+        }
+        console.log(customer);
         this.thecustomer = customer.filter((c: Customer) => {
           return c.status !== 'Collected';
         });

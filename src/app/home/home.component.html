@@ -1,7 +1,7 @@
 <app-nav class="header"></app-nav>
  <mat-card>
 
-  <h3><strong>check laundry status</strong></h3>
+  <h3><strong>Check Laundry status</strong></h3>
   <form #customer="ngForm" (ngSubmit)="getCustomer(customer.value)">
     <mat-form-field appearance="outline">
       <mat-label for="phonenumber">Phone number</mat-label>
@@ -15,24 +15,32 @@
     diameter="20"
     strokeWidth = "1">
     </mat-progress-spinner>Check status</button>
+    <mat-error>{{message}}</mat-error>
   </form>
 </mat-card>
 
 
 
+
 <mat-card *ngFor="let c of thecustomer">
-  <mat-list>
-  <mat-list-item><span class="labels"><strong>status</strong></span><span class="right">{{c.status}}</span></mat-list-item>
-  <mat-divider [inset] ="true"></mat-divider>
-<mat-list-item><span class="labels"><strong>items</strong></span><span>{{c.numberItems}}</span></mat-list-item>
-  <mat-divider [inset] ="true"></mat-divider>
-<mat-list-item><span class="labels"><strong>amount</strong></span><span>{{c.amountPaid | currency: "NGN":"symbol-narrow"}}</span></mat-list-item>
-  <mat-divider [inset] ="true"></mat-divider>
-<mat-list-item><span class="labels"><strong>date</strong></span><span>{{c.createdAt | date:'medium'}}</span></mat-list-item>
-<mat-divider [inset] ="true"></mat-divider>
-<mat-list-item><span class="labels"><strong>shop</strong></span><span>{{c.shopPhone}}</span></mat-list-item>
-</mat-list>
+    <mat-list>
+      <mat-list-item><span class="labels"><strong>status</strong></span><span class="right">{{c.status}}</span>
+      </mat-list-item>
+      <mat-divider [inset]="true"></mat-divider>
+      <mat-list-item><span class="labels"><strong>items</strong></span><span>{{c.numberItems}}</span></mat-list-item>
+      <mat-divider [inset]="true"></mat-divider>
+      <mat-list-item><span
+          class="labels"><strong>amount</strong></span><span>{{c.amountPaid | currency: "NGN":"symbol-narrow"}}</span>
+      </mat-list-item>
+      <mat-divider [inset]="true"></mat-divider>
+      <mat-list-item><span class="labels"><strong>date</strong></span><span>{{c.createdAt | date:'medium'}}</span>
+      </mat-list-item>
+      <mat-divider [inset]="true"></mat-divider>
+      <mat-list-item><span class="labels"><strong>shop</strong></span><span>{{c.shopPhone}}</span></mat-list-item>
+    </mat-list>
+
 </mat-card>
+
 
 <mat-card>
   <h3>Advert board</h3>
