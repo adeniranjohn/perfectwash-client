@@ -43,7 +43,7 @@ app-admin-nav {
 
 
 mat-card {
-  margin: 5px;
+  margin: 10px;
 }
 
 img.mat-card-image {
@@ -139,7 +139,7 @@ app-footer {
   bottom: 0;
   right: 0;
   left: 0;
-  
+
 
 }
 mat-error {

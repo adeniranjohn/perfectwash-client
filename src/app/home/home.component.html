@@ -5,7 +5,7 @@
   <form #customer="ngForm" (ngSubmit)="getCustomer(customer.value)">
     <mat-form-field appearance="outline">
       <mat-label for="phonenumber">Phone number</mat-label>
-    <input matInput size="10"  required type="text" placeholder="Kindly enter your Phone number" id="phonenumber" name="phonenumber" ngModel/>
+    <input matInput size="10"  required type="text" placeholder="Phone number" id="phonenumber" name="phonenumber" ngModel/>
   </mat-form-field>
   <button color="accent" type="submit" mat-raised-button >
     <mat-progress-spinner
