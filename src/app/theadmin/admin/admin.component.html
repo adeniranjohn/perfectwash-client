@@ -1,14 +1,22 @@
 
 <mat-nav-list class="nav">
-  <a [routerLink]="['/']" routerLinkActive="router-link-active" mat-button color="primary">🏚 Home</a>
-  <a [routerLink]="['/contact']" routerLinkActive="router-link-active" mat-button color="primary">&#9742; Contact</a>
+  <a [routerLink]="['/']" routerLinkActive="router-link-active" mat-button >Home</a>
+  <a [routerLink]="['/contact']" routerLinkActive="router-link-active" mat-button >Contact</a>
 </mat-nav-list>
+
+<hr/>
 
 
 <mat-card>
-  <h2>Sign in</h2>
-  <mat-error><small>{{error}}</small></mat-error>
+
+
 <form #f="ngForm" (ngSubmit)="getAdmin(f.value)">
+  <h2>Perfect Wash</h2>
+   <h6>sign in</h6>
+  <br>
+  <mat-error>{{error}}</mat-error>
+
+  <br>
   <mat-form-field appearance="outline">
   <mat-label for="phoneNumber">Phone number</mat-label>
   <input matInput required type="text" name="phoneNumber" placeholder="Shop number" autocomplete="tel-local" id="phonenumber" ngModel/>

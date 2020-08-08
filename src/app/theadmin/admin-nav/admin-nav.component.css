@@ -2,3 +2,8 @@ mat-nav-list {
   display: inline-block;
 
 }
+
+a:hover {
+  color: white;
+}
+

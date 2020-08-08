@@ -63,8 +63,44 @@ mat-nav-list {
 }
 
 a {
+  font-weight: 500;
   padding: 5px;
   margin: 0 auto;
+}
+
+a:hover {
+  background-color: rgb(15, 130, 175);
+  color: white;
+}
+
+a:active {
+  background-color: rgb(15, 130, 175);
+  color: #ffd740;
+}
+
+h2 {
+  text-align: center;
+  padding: 1px;
+  margin: 1px;
+}
+
+
+
+h3 {
+  font-size: 24px;
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+}
+
+
+h6 {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
 }
 
 
@@ -76,6 +112,7 @@ span.status {
 
   background-color: #ffd740;
   color: #673ab7;
+  font-weight: 700;
   border: none;
   outline: none;
   box-sizing: border-box;
@@ -88,6 +125,7 @@ span.labels {
   margin: 2px 2px;
   min-width: 30%;
   color: #673ab7;
+  font-weight: 500;
 }
 
 
@@ -109,24 +147,12 @@ form {
   text-align: center;
 }
 
-h2,
-strong {
-  text-align: center;
-  color: #673ab7;
-  padding: 1px;
-  margin: 1px;
-}
 
 
 
-h3 {
-  font-size: 16px;
-  font-weight: 900;
-  margin: 0;
-  padding: 0;
-  text-align: center;
 
-}
+
+
 
 
 .primary {

@@ -1,7 +1,17 @@
 button {
-  margin-right: 0;
-  vertical-align: baseline;
+  margin-right: 0 5px;
+
 }
+
+h1 {
+  font-size: 48px;
+  font-weight: 900;
+  margin: 0;
+  line-height: 40px;
+  letter-spacing: 1px;
+}
+
+
 mat-form-field {
   padding: 5px;
 }
@@ -27,19 +37,29 @@ app-nav {
 mat-card {
   height: max-content;
 }
+
 mat-progress-spinner {
   display: inline;
   padding: 0 15px;
 }
 
-h1 {
-  font-size: 48px;
-  font-weight: 900;
-  margin: 0;
-  line-height: 40px;
-  letter-spacing: 1px;
+h2 {
+  text-align: center;
+  color: #673ab7;
+  padding: 1px;
+  margin: 1px;
 }
 
+
+
+h3 {
+  font-size: 16px;
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+}
 
 
 h6 {
@@ -47,4 +67,10 @@ h6 {
   font-weight: 700;
   padding: 0;
   margin: 0;
+}
+
+input {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0;
 }

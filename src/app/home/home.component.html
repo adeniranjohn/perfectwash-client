@@ -15,18 +15,18 @@
 
 
   <form #customer="ngForm" (ngSubmit)="getCustomer(customer.value)">
-      <h2>Check Laundry status</h2>
+      <h6>Check your laundry status</h6>
     <mat-form-field appearance="outline">
       <mat-label for="phonenumber">Phone number</mat-label>
-    <input matInput size="10"  required type="text" placeholder="Phone number" id="phonenumber" name="phonenumber" ngModel/>
+    <input matInput size="11"  required type="text" placeholder="Phone number" id="phonenumber" name="phonenumber" ngModel/>
 
   </mat-form-field>
       <button color="accent" type="submit" mat-raised-button>
         <mat-progress-spinner *ngIf="loading" color="primary" mode="indeterminate" diameter="20" strokeWidth="1">
-        </mat-progress-spinner>Check status
+        </mat-progress-spinner>Check
       </button>
 
-    <mat-error>{{message}}</mat-error>
+    <mat-error><h6>{{message}}</h6></mat-error>
   </form>
   </section>
 </mat-card>

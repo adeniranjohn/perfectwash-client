@@ -50,7 +50,7 @@ import { AuthGuard } from '../auth.guard';
 
   ],
   exports: [
-   
+
   ],
   providers: [
     {
