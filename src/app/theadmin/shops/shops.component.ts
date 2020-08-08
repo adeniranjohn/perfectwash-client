@@ -32,6 +32,7 @@ export class ShopsComponent implements OnInit, OnDestroy{
     this.shopsSub = this.api.getShops()
     .pipe(finalize(() => this.loading = false))
     .subscribe((res: any) => {
+      console.log(res.shops);
       this.shops = res.shops;
     } );
   }

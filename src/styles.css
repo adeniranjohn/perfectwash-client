@@ -1,159 +1,163 @@
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  src: local('Roboto Regular'), local('Roboto-Regular'), url(/src/assets/Roboto-Regular.ttf) format('truetype');
-  
-  }
-
-  body,
-  app-root {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0;
+body,
+app-root {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
 
 
 
-  }
+}
 
 
 
-  body.mat-typography {
-    margin: 0 auto !important;
-    padding: 0;
-  }
+body.mat-typography {
+  margin: 0 auto !important;
+  padding: 0;
+}
 
-  app-root {
-    margin: 0 auto;
-    padding: 0;
-  }
+app-root {
+  margin: 0 auto;
+  padding: 0;
+}
 
-  mat-progress-spinner {
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-  }
+mat-progress-spinner {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
 
-  app-nav,
-  app-admin-nav {
-    display: flex;
-    padding: 5px;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    margin-bottom: 50px;
-    max-width: 100%;
-
-
-
-  }
+app-nav,
+app-admin-nav {
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-bottom: 50px;
+  max-width: 100%;
 
 
-  mat-card {
-    margin: 10px 20px;
-  }
 
-  img.mat-card-image {
-    display: block;
-    max-width: 100%;
-    padding: 0px;
-    margin: 0px;
-  }
+}
+
+
+mat-card {
+  margin: 10px 20px;
+}
+
+img.mat-card-image {
+  display: block;
+  max-width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
 
 
 
 
-  mat-nav-list {
-    padding: 0px;
-    margin: 0px;
-    background-color: white;
-  }
+mat-nav-list {
+  padding: 0px;
+  margin: 0px;
+  background-color: white;
+}
 
-  a {
-    padding: 5px;
-    margin: 0 auto;
-  }
-
-
-  span {
-    font-size: 0.8rem;
-  }
-
-  span.status {
-
-    background-color: #ffd740;
-    color: #673ab7;
-    border: none;
-    outline: none;
-    box-sizing: border-box;
-    padding: 5px;
-    border-radius: 1px;
-  }
-
-  span.labels {
-    display: inline-block;
-    margin: 2px 2px;
-    min-width: 30%;
-    color: #673ab7;
-  }
+a {
+  padding: 5px;
+  margin: 0 auto;
+}
 
 
-  form {
-    text-align: center;
-    padding: 5px;
-  }
+span {
+  font-size: 0.8rem;
+}
 
-  .right {
-    text-align: right;
+span.status {
 
-  }
+  background-color: #ffd740;
+  color: #673ab7;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  padding: 5px;
+  border-radius: 1px;
+}
 
-  .left {
-    text-align: left;
-  }
-
-  .center {
-    text-align: center;
-  }
-
-  h2,
-  h3,
-  strong {
-    text-align: center;
-    color: #673ab7;
-    padding: 1px;
-    margin: 1px;
-  }
-
-  .primary {
-    background-color: #673ab7;
-    color: white;
-  }
-
-  .accent {
-    background-color: #ffd740;
-    color: black;
-
-  }
+span.labels {
+  display: inline-block;
+  margin: 2px 2px;
+  min-width: 30%;
+  color: #673ab7;
+}
 
 
-  .white {
-    color: white;
-  }
+form {
+  text-align: center;
+  padding: 5px;
+}
 
-  app-footer {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
+.right {
+  text-align: right;
+
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+h2,
+strong {
+  text-align: center;
+  color: #673ab7;
+  padding: 1px;
+  margin: 1px;
+}
 
 
-  }
 
-  mat-error {
-    text-align: center;
-  }
+h3 {
+  font-size: 16px;
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 
-  footer {
-    display: block;
-  }
+}
+
+
+.primary {
+  background-color: #673ab7;
+  color: white;
+}
+
+.accent {
+  background-color: #ffd740;
+  color: black;
+
+}
+
+
+.white {
+  color: white;
+}
+
+app-footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+
+}
+
+mat-error {
+  text-align: center;
+}
+
+footer {
+  display: block;
+}

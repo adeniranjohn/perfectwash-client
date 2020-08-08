@@ -11,17 +11,59 @@
   <meta name="theme-color" content="#673ab7">
   <meta name="description" content="Perfect Wash web app for daily business">
   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" async>
-   <!-- <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <!--<link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>-->
 
 
 </head>
 <body class="mat-typography">
-  <app-root></app-root>
+  <app-root>
+    <style>
+      app-root {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        color: #673ab7;
+        font-size: 2.5em;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      @keyframes dots {
+        50% {
+          transform: translateY(-.4rem);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .delaydot {
+        animation: dots 1.5s ease-out infinite;
+      }
+
+      .delay5 {
+        animation-delay: .5s;
+      }
+
+      .delay1 {
+        animation-delay: 1s;
+      }
+    </style>
+
+    Perfect Wash<span class="delaydot">.</span><span class="delaydot delay5">.</span><span class="delaydot delay1">.</span>
+  </app-root>
 
 </body>
 </html>
