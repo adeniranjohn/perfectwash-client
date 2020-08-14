@@ -1,36 +1,39 @@
 <app-nav class="header"></app-nav>
- <mat-card>
+
    <section>
   <header>
     <h6>Welcome to...</h6>
     <h1>Perfect Wash</h1>
     <h1>Dry Cleaning and Laundry Services</h1>
+
+    <address>
+      <h6>29 Community Rd, Akoka, Lagos.</h6>
+      <h6>38 Jebba St, Ebute Metta, Lagos.</h6>
+    </address>
   </header>
   <br>
-  <address>
-    <h6>29 Community Rd, Akoka, Lagos.</h6>
-    <h6>38 Jebba St, Ebute Metta, Lagos.</h6>
-  </address>
 
-
-
-  <form #customer="ngForm" (ngSubmit)="getCustomer(customer.value)">
+    <aside>
+    <form #customer="ngForm" (ngSubmit)="getCustomer(customer.value)">
       <h6>Check your laundry status</h6>
-    <mat-form-field appearance="outline">
-      <mat-label for="phonenumber">Phone number</mat-label>
-    <input matInput size="11"  required type="text" placeholder="Phone number" id="phonenumber" name="phonenumber" ngModel/>
+      <mat-form-field appearance="outline">
+        <mat-label for="phonenumber">Phone number</mat-label>
+        <input matInput size="11" required type="text" placeholder="Phone number" id="phonenumber" name="phonenumber"
+          ngModel />
 
-  </mat-form-field>
-      <button color="accent" type="submit" mat-raised-button>
+      </mat-form-field>
+      <button color="accent" type="submit" mat-raised-button>Check
         <mat-progress-spinner *ngIf="loading" color="primary" mode="indeterminate" diameter="20" strokeWidth="1">
-        </mat-progress-spinner>Check
+        </mat-progress-spinner>
       </button>
 
-    <mat-error><h6>{{message}}</h6></mat-error>
-  </form>
-  </section>
-</mat-card>
+      <mat-error>
+        <h6>{{message}}</h6>
+      </mat-error>
+    </form>
+    </aside>
 
+</section>
 
 
 
