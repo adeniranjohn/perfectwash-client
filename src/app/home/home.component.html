@@ -21,6 +21,25 @@
             </mat-error>
           </form>
         </aside>
+        <mat-card *ngFor="let c of thecustomer">
+          <mat-list>
+            <mat-list-item><span class="labels"><strong>status</strong></span><span class="right status">{{c.status}}</span>
+            </mat-list-item>
+            <mat-divider [inset]="true"></mat-divider>
+            <mat-list-item><span class="labels"><strong>items</strong></span><span>{{c.numberItems}}</span></mat-list-item>
+            <mat-divider [inset]="true"></mat-divider>
+            <mat-list-item><span
+                class="labels"><strong>amount</strong></span><span>{{c.amountPaid | currency: "NGN":"symbol-narrow"}}</span>
+            </mat-list-item>
+            <mat-divider [inset]="true"></mat-divider>
+            <mat-list-item><span class="labels"><strong>date</strong></span><span>{{c.createdAt | date:'medium'}}</span>
+            </mat-list-item>
+            <mat-divider [inset]="true"></mat-divider>
+            <mat-list-item><span class="labels"><strong>shop</strong></span><span>{{c.shopPhone}}</span></mat-list-item>
+          </mat-list>
+
+        </mat-card>
+
   <header>
     <h6>Welcome to...</h6>
     <h1>Perfect Wash</h1>
@@ -30,6 +49,14 @@
       <h6>29 Community Rd, Akoka, Lagos.</h6>
       <h6>38 Jebba St, Ebute Metta, Lagos.</h6>
     </address>
+    <p>We also do the following business</p>
+    <ul>
+
+        <li>Washing and folding</li>
+        <li>Washing and Pressing</li>
+        <li>Cleaning and fumigation</li>
+      
+    </ul>
   </header>
   <br>
 
@@ -39,24 +66,6 @@
 
 
 
-<mat-card *ngFor="let c of thecustomer">
-    <mat-list>
-      <mat-list-item><span class="labels"><strong>status</strong></span><span class="right status">{{c.status}}</span>
-      </mat-list-item>
-      <mat-divider [inset]="true"></mat-divider>
-      <mat-list-item><span class="labels"><strong>items</strong></span><span>{{c.numberItems}}</span></mat-list-item>
-      <mat-divider [inset]="true"></mat-divider>
-      <mat-list-item><span
-          class="labels"><strong>amount</strong></span><span>{{c.amountPaid | currency: "NGN":"symbol-narrow"}}</span>
-      </mat-list-item>
-      <mat-divider [inset]="true"></mat-divider>
-      <mat-list-item><span class="labels"><strong>date</strong></span><span>{{c.createdAt | date:'medium'}}</span>
-      </mat-list-item>
-      <mat-divider [inset]="true"></mat-divider>
-      <mat-list-item><span class="labels"><strong>shop</strong></span><span>{{c.shopPhone}}</span></mat-list-item>
-    </mat-list>
-
-</mat-card>
 
 
 
